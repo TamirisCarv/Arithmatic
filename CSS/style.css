@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-family: "Inter", sans-serif;
+
+  --background-color: #03101d;
+  --azul-escuro: #061a2b;
+  --color-white: #ffffff;
+  --verde-agua: #64ced3;
+  --roxo: #a855f7;
+  --lilas: #c6adff;
+
+  --background-banner: radial-gradient(
+      at 98% 0%,
+      hsla(269, 91%, 65%, 0.5) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 99% 69%, hsla(269, 91%, 65%, 0.1) 0px, transparent 50%),
+    radial-gradient(at 56% 99%, hsla(269, 91%, 65%, 0.4) 0px, transparent 50%);
+}
+
+body {
+  background: var(--background-color);
+  color: var(--color-white);
+}
+
+.landing {
+  padding: 3.5rem 9rem;
+}
+
+.landing .banner {
+  padding: 5rem;
+  background: #1b1a3c;
+  background-image: var(--background-banner);
+  display: flex;
+  align-items: center;
+  gap: 155px;
+
+  border-radius: 2rem;
+}
+
+.landing .banner .content-banner h2 {
+  color: var(--verde-agua);
+  font-size: 2.5rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.landing .banner .content-banner p {
+  font-size: 0.9rem;
+  font-weight: 400;
+
+  margin-bottom: 4rem;
+  opacity: 80%;
+}
+
+.landing .banner .content-banner a {
+  padding: 0.8rem 2rem;
+  background: var(--verde-agua);
+  border-radius: 0.4rem;
+
+  color: var(--azul-escuro);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.landing .banner .content-banner a:hover {
+  background: #51b5bb;
+}
+
+.landing .banner .image img {
+  width: 390px;
+  margin: 0 3rem 0 0;
+}
+
+.cards {
+  padding: 1.5rem 9rem 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards .border {
+  height: 100%;
+  position: relative;
+  background: linear-gradient(
+    126.68deg,
+    rgba(168, 85, 247, 0.3) -13.95%,
+    rgba(168, 85, 247, 0.1) 100%
+  );
+
+  padding: 1.5px;
+  border-radius: 1rem;
+}
+
+.cards .card {
+  width: 280px;
+  min-height: 270px;
+  background: linear-gradient(127.74deg, #1b1a3c -1.42%, #0a1625 100%);
+  border-radius: 1rem;
+
+  padding: 1.5rem;
+}
+
+.cards .card h2 {
+  font-size: 1.2rem;
+
+  color: var(--roxo);
+}
+
+.cards .card p {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin: 1rem 0 2rem;
+  opacity: 80%;
+}
+
+.cards .card a {
+  padding: 0.6rem 1.2rem;
+  background: #a855f750;
+  text-decoration: none;
+  border-radius: 0.3rem;
+
+  color: var(--color-white);
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.cards .card a:hover {
+  background: #a855f780;
+}

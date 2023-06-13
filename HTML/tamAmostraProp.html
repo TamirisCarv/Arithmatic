@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tamanho da Amostra - Proporção | Arithmatic</title>
+
+    <link rel="stylesheet" href="../CSS/formulas.css" />
+    <link rel="stylesheet" href="../CSS/header.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Arithmatic</div>
+
+      <div class="links">
+        <ul>
+          <li><a href="../HTML/index.html">Home</a></li>
+          <li><a href="../HTML/intConfMed.html">IC - Média</a></li>
+          <li>
+            <a href="../HTML/intConfProp.html"
+              >IC - Proporção</a
+            >
+          </li>
+          <li><a href="../HTML/tamAmostraMed.html">TA - Média</a></li>
+          <li><a href="../HTML/tamAmostraProp.html" class="pagAtual">TA - Proporção</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="inputs">
+        <h2>Tamanho da Amostra - Proporção</h2>
+        <form>
+          <div class="options-radios">
+            <div class="label-radio">
+              <label for="">Grau de confiança</label>
+            </div>
+
+            <div class="radios">
+              <div class="radio">
+                <input
+                  type="radio"
+                  id="opcao1"
+                  name="opcoes"
+                  value="90"
+                  onclick="insertRadio('1.645')"
+                />
+                <label for="opcao1">90%</label>
+              </div>
+
+              <div class="radio">
+                <input
+                  type="radio"
+                  id="opcao2"
+                  name="opcoes"
+                  value="95"
+                  onclick="insertRadio('1.96')"
+                />
+                <label for="opcao2">95%</label>
+              </div>
+
+              <div class="radio">
+                <input
+                  type="radio"
+                  id="opcao3"
+                  name="opcoes"
+                  value="99"
+                  onclick="insertRadio('2.575')"
+                />
+                <label for="opcao3">99%</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="input">
+            <label for="">
+              Valor de P
+              <img
+                src="../assets/question.svg"
+                alt="ícone de ajuda"
+                title="Caso não tenha o valor de p, utiliza-se 0,5 como padrão"
+            /></label>
+
+            <input type="number" id="valordeP" />
+
+            <div class="valor-P">
+              <a id="valorP-open">Não tenho valor de P</a>
+            </div>
+          </div>
+
+          <div class="input">
+            <label for=""> Erro </label>
+            <input type="number" id="erro" />
+          </div>
+        </form>
+        <button id="btnSubmit" onclick="tamAmostraProp()">Calcular</button>
+
+        <div class="explicacao">
+          <h2>Quer ver a explicação completa da matéria?</h2>
+          <button id="buttonOpen">Clique aqui!</button>
+        </div>
+      </section>
+
+      <section class="tabela">
+        <dialog class="dialog-modal">
+          <div class="close-modal">
+            <button id="buttonClose" class="buttonClose">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+          </div>
+
+          <div class="content-modal">
+            <h2>Intervalo de Confiança - Média</h2>
+            <p>
+              O intervalo de confiança para a média é uma medida estatística que
+              fornece uma faixa de valores dentro da qual se espera que esteja a
+              média populacional de uma determinada variável, com um certo nível
+              de confiança.
+            </p>
+            <p>
+              Quando estamos lidando com dados amostrais, geralmente não temos
+              acesso a toda a população, então precisamos fazer inferências
+              sobre os parâmetros populacionais com base nas informações obtidas
+              da amostra. O intervalo de confiança para a média é uma dessas
+              inferências.
+            </p>
+            <p>
+              O intervalo de confiança para a média é calculado a partir das
+              características da amostra, como média amostral, desvio padrão
+              amostral e tamanho da amostra, juntamente com um nível de
+              confiança escolhido. O nível de confiança é uma medida da
+              probabilidade de que o intervalo captura corretamente o valor
+              verdadeiro da média populacional. É comum usar níveis de confiança
+              de 90%, 95% ou 99%.
+            </p>
+            <p>
+              O cálculo do intervalo de confiança para a média é baseado na
+              distribuição t de Student, que leva em consideração o tamanho da
+              amostra e a variabilidade dos dados. Quanto maior o tamanho da
+              amostra, menor será o intervalo de confiança, pois a estimativa da
+              média amostral será mais precisa.
+            </p>
+            <p>
+              Por exemplo, suponha que temos uma amostra de 100 indivíduos e
+              queremos estimar a média de altura da população com 95% de
+              confiança. Após calcular a média e o desvio padrão da amostra,
+              podemos usar a distribuição t de Student para determinar os
+              valores críticos correspondentes ao nível de confiança escolhido.
+              Com esses valores, construímos o intervalo de confiança para a
+              média, que nos dirá que, em média, a altura populacional está
+              dentro dessa faixa específica.
+            </p>
+            <p>
+              É importante lembrar que o intervalo de confiança não fornece uma
+              estimativa pontual da média populacional, mas sim uma faixa de
+              valores plausíveis. Além disso, o intervalo de confiança é baseado
+              em pressuposições e limitações específicas, como a aleatoriedade
+              da amostra e a representatividade da mesma em relação à população.
+            </p>
+            <p>
+              Em resumo, o intervalo de confiança para a média é uma ferramenta
+              estatística que nos permite fazer inferências sobre a média
+              populacional com base em informações amostrais. Ele fornece uma
+              estimativa da incerteza associada à estimativa da média e é útil
+              para tomar decisões e fazer previsões com um certo nível de
+              confiança.
+            </p>
+          </div>
+        </dialog>
+
+        <table>
+          <tr>
+            <th>Valor de P:</th>
+            <td id="valordeP-td"></td>
+          </tr>
+          <tr>
+            <th>Erro:</th>
+            <td id="erro-td"></td>
+          </tr>
+          <tr>
+            <th>Grau de Confiança:</th>
+            <td id="grauConf-td"></td>
+          </tr>
+        </table>
+
+        <div id="resultado-amostra">
+          <div class="res">
+            <h2>Intervalo de confiança: </h2> <h3></h3>
+          </div>
+          <!-- <div class="res">
+            <h2>Inteiro mais próximo: </h2> <h3></h3>
+          </div> -->
+          </div>
+
+        <!-- <div id="resultado"><h2>Intervalo de confiança:</h2> -->
+        <h3></h3></div>
+      </section>
+    </main>
+
+    <dialog class="dialog-P">
+      <div class="close-modal-P">
+        <button id="buttonClose-P" class="buttonClose-P">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+
+      <div class="content-modal">
+        <h2>Calcular valor de P</h2>
+        <form action="">
+          <div class="input">
+            <label for=""> Numero de sucesso <img
+              src="../assets/question.svg"
+              alt="ícone de ajuda"
+              title="É a ocorrência positiva da condição que está sendo estudada na amostra.
+  Ex: X pessoas votariam no candidato Z"
+            /></label>
+            
+
+            <input type="number" id="numSucesso" />
+          </div>
+
+          <div class="input">
+            <label for="">Tamanho da amostra</label>
+            <input type="number" id="tamAmostraP" />
+          </div>
+        </form>
+        <button id="btnSubmit" onclick="calcularP()">Calcular</button>
+        <div id="resultadoP">
+          <h2>Valor de P:</h2>
+          <h3></h3>
+        </div>
+      </div>
+    </dialog>
+
+
+    <!-- Código para calcular o valor do P dentro do modal: -->
+
+    <!-- <div id="modal" style="display: none">
+      <form action="">
+        <div class="help">
+          <label for=""> Numero de sucesso </label>
+          <img
+            src="./assets/question.svg"
+            alt="ícone de ajuda"
+            title="É a ocorrência positiva da condição que está sendo estudada na amostra.
+Ex: X pessoas votariam no candidato Z"
+          />
+
+          <input type="number" id="numSucesso" />
+        </div>
+
+        <label for="">Tamanho da amostra</label>
+        <input type="number" id="tamAmostraP" />
+      </form>
+      <button id="btnSubmit" onclick="calcularP()">Calcular P</button>
+      <div id="resultadoP"></div>
+    </div>
+    <button id="btnSubmit" onclick="abrirmodal()">Não tenho valor de P</button> -->
+
+    <div id="resultado"></div>
+
+
+    <script src="../JS/tamAmostraProp.js"></script>
+    <script src="../JS/index.js"></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

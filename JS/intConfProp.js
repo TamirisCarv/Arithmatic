@@ -57,17 +57,18 @@ document.getElementById("btnSubmit").onclick = function () {
     let tamAmostraP = Number(document.getElementById("tamAmostraP").value);
 
     let resultadoP = numSucesso/tamAmostraP;
+    let arredondarP = parseFloat(resultadoP.toFixed(2));
     
 
     document.getElementById("resultadoP").innerHTML =
     "<h2>Valor de P: </h2> <h3>" +
-    resultadoP +
+    arredondarP +
     "</h3>";
 
-    document.getElementById("valordeP").value = resultadoP;
+    document.getElementById("valordeP").value = arredondarP;
 
     document.getElementById("valordeP-td").innerText =
-    resultadoP;
+    arredondarP;
 
   }
 

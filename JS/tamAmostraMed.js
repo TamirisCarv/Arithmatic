@@ -28,7 +28,7 @@ function tamAmostraMed(opcaoRadio) {
   let arredondar = Math.ceil(amostra); // aproximar o número para o próximo inteiro
 
   document.getElementById("resultado-amostra").innerHTML =
-    '<div class="res"><h2>Intervalo de confiança: </h2> <h3>' +
+    '<div class="res"><h2> Tamanho da amostra: </h2> <h3>' +
     amostra +
     '</h3></div> <div class="res">' +
     "<h2>Inteiro mais próximo: </h2> <h3>" +
@@ -60,14 +60,3 @@ document.querySelector("#erro").oninput = () => {
 
 // abrir modal do erro
 
-const buttonErro = document.getElementById("valorErro-open");
-const modalErro = document.querySelector(".dialog-erro");
-const buttonCloseErro = document.querySelector("#buttonClose-erro");
-
-buttonErro.onclick = function () {
-  modalErro.showModal();
-};
-
-buttonCloseErro.onclick = function () {
-  modalErro.close();
-};

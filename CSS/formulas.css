@@ -123,7 +123,7 @@
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--lilas);
-
+    text-decoration:none;
     cursor: pointer;
     transition: 0.3s;
   }

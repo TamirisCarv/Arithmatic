@@ -33,7 +33,7 @@ document.getElementById("btnSubmit").onclick = function () {
     // '<img src="./assets/question.svg" alt="ícone de ajuda" title="Esse resultado já está arredondado para o inteiro mais próximo">';
 
     document.getElementById("resultado-amostra").innerHTML =
-    '<div class="res"><h2>Intervalo de confiança: </h2> <h3>' +
+    '<div class="res"><h2> Tamanho da amostra: </h2> <h3>' +
     amostra +
     '</h3></div> <div class="res">' +
     "<h2>Inteiro mais próximo: </h2> <h3>" +
